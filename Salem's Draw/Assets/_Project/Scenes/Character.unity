@@ -214,6 +214,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4713358246549334668, guid: ff185af0c2aff6e4aa73724e22341c13,
+        type: 3}
+      propertyPath: slideSpeed
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713358246549334668, guid: ff185af0c2aff6e4aa73724e22341c13,
+        type: 3}
+      propertyPath: slideDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713358246549334668, guid: ff185af0c2aff6e4aa73724e22341c13,
+        type: 3}
+      propertyPath: slideToggleDuration
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6185715138148113587, guid: ff185af0c2aff6e4aa73724e22341c13,
+        type: 3}
+      propertyPath: sprintSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6185715138148113587, guid: ff185af0c2aff6e4aa73724e22341c13,
+        type: 3}
+      propertyPath: walkingSpeed
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6486238015242590202, guid: ff185af0c2aff6e4aa73724e22341c13,
         type: 3}
       propertyPath: m_LocalPosition.x

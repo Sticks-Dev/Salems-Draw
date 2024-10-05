@@ -1,6 +1,3 @@
-using Kickstarter.Observer;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Salems_Draw
@@ -9,15 +6,16 @@ namespace Salems_Draw
     {
         [SerializeField] protected float walkingSpeed;
         [SerializeField] protected float sprintSpeed;
-        [SerializeField] private float jumpHeight;
 
         protected bool isGrounded;
         protected float movementSpeed;
         public bool CanMove { private get; set; } = true;
+        public float WalkingSpeed => walkingSpeed;
+        public float SprintSpeed => sprintSpeed;
+
 
         // Cached References & Constant Values
         protected Rigidbody body;
-        private float jumpVelocity;
         private const float radiusMultiplier = 0.5f;
         private const float groundDistance = 1f;
         private const float airborneMovementMultiplier = 40f;
@@ -32,7 +30,6 @@ namespace Salems_Draw
 
         protected virtual void Start()
         {
-            jumpVelocity = Mathf.Sqrt(Mathf.Abs(jumpHeight * Physics.gravity.y * 2));
             var capsule = transform.root.GetComponentInChildren<CapsuleCollider>();
             groundRadius = capsule.radius * radiusMultiplier;
             cameraTransform = Camera.main.transform;
@@ -73,21 +70,16 @@ namespace Salems_Draw
             body.AddForce(desiredForce, ForceMode.Force);
         }
 
-        protected void AttemptJump(ref float input)
-        {
-            if (input != 1)
-                return;
-            if (!isGrounded)
-                return;
-            body.AddForce(jumpVelocity * Vector3.up, ForceMode.VelocityChange);
-            input = 0;
-        }
-
         protected void CheckGrounded()
         {
             var ray = new Ray(transform.position + Vector3.up, -Vector3.up);
             bool wasGrounded = isGrounded;
             isGrounded = Physics.SphereCast(ray, groundRadius, groundDistance);
+        }
+
+        public void SetSpeed(float speed)
+        {
+            this.movementSpeed = speed;
         }
     }
 }

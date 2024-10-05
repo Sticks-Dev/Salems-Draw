@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61d094339e318db498ea5f52b5cfe7e0, type: 3}
-  m_Name: Jump
+  m_Name: Slide
   m_EditorClassIdentifier: 
   inputAction:
     m_Name: Input
@@ -22,7 +22,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: d6833f1f-38f9-4a1d-af6e-644b8305034d
-      m_Path: <Keyboard>/space
+      m_Path: <Keyboard>/leftCtrl
       m_Interactions: 
       m_Processors: 
       m_Groups: 
