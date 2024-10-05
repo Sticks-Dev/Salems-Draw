@@ -1,23 +1,19 @@
 using Kickstarter.Inputs;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Salems_Draw
 {
     public class MoveController : LocomotionController, IInputReceiver
     {
+        #region InputHandler
         [Header("Inputs")]
         [SerializeField] private Vector2Input movementInput;
         [SerializeField] private FloatInput sprintInput;
         [SerializeField] private FloatInput jumpInput;
 
         private Vector3 rawMovementInput;
-        private bool slamGround;
+        private float rawJumpInput;
 
-        private const float groundSlamForce = 50;
-
-        #region InputHandler
         public void RegisterInputs(Player.PlayerIdentifier playerIdentifier)
         {
             movementInput.RegisterInput(OnMovementInputChange, playerIdentifier);
@@ -44,9 +40,7 @@ namespace Salems_Draw
 
         private void OnJumpInputChange(float input)
         {
-            if (input == 0)
-                return;
-            Jump();
+            rawJumpInput = input;
         }
         #endregion
 
@@ -65,6 +59,7 @@ namespace Salems_Draw
         {
             CheckGrounded();
             MoveTowards(rawMovementInput);
+            AttemptJump(ref rawJumpInput);
         }
         #endregion
     }

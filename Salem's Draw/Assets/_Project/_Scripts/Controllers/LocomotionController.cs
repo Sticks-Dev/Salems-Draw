@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Salems_Draw
 {
-    public abstract class LocomotionController : Observable, IMover
+    public abstract class LocomotionController : MonoBehaviour, IMover
     {
         [SerializeField] protected float walkingSpeed;
         [SerializeField] protected float sprintSpeed;
@@ -44,7 +44,6 @@ namespace Salems_Draw
         {
             direction = cameraTransform.TransformDirection(direction);
             direction = Vector3.ProjectOnPlane(direction, Vector3.up).normalized;
-            NotifyObservers(new MovementChange(direction * movementSpeed));
             if (!CanMove)
                 return;
             if (!isGrounded)
@@ -74,12 +73,14 @@ namespace Salems_Draw
             body.AddForce(desiredForce, ForceMode.Force);
         }
 
-        protected void Jump()
+        protected void AttemptJump(ref float input)
         {
+            if (input != 1)
+                return;
             if (!isGrounded)
                 return;
             body.AddForce(jumpVelocity * Vector3.up, ForceMode.VelocityChange);
-            NotifyObservers(GroundedStatus.Jump);
+            input = 0;
         }
 
         protected void CheckGrounded()
@@ -87,27 +88,6 @@ namespace Salems_Draw
             var ray = new Ray(transform.position + Vector3.up, -Vector3.up);
             bool wasGrounded = isGrounded;
             isGrounded = Physics.SphereCast(ray, groundRadius, groundDistance);
-            if (wasGrounded != isGrounded)
-                NotifyObservers(isGrounded ? GroundedStatus.Landing : GroundedStatus.Falling);
         }
-
-        #region Notifications
-        public enum GroundedStatus
-        {
-            Jump,
-            Landing,
-            Falling,
-        }
-
-        public struct MovementChange : INotification
-        {
-            public Vector3 Velocity { get; }
-
-            public MovementChange(Vector3 localDirection)
-            {
-                Velocity = localDirection;
-            }
-        }
-        #endregion
     }
 }
