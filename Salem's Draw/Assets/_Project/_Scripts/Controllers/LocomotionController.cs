@@ -1,23 +1,21 @@
-using Kickstarter.Observer;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Salems_Draw
 {
-    public abstract class LocomotionController : Observable, IMover
+    public abstract class LocomotionController : MonoBehaviour, IMover
     {
         [SerializeField] protected float walkingSpeed;
         [SerializeField] protected float sprintSpeed;
-        [SerializeField] private float jumpHeight;
 
         protected bool isGrounded;
         protected float movementSpeed;
         public bool CanMove { private get; set; } = true;
+        public float WalkingSpeed => walkingSpeed;
+        public float SprintSpeed => sprintSpeed;
+
 
         // Cached References & Constant Values
         protected Rigidbody body;
-        private float jumpVelocity;
         private const float radiusMultiplier = 0.5f;
         private const float groundDistance = 1f;
         private const float airborneMovementMultiplier = 40f;
@@ -32,7 +30,6 @@ namespace Salems_Draw
 
         protected virtual void Start()
         {
-            jumpVelocity = Mathf.Sqrt(Mathf.Abs(jumpHeight * Physics.gravity.y * 2));
             var capsule = transform.root.GetComponentInChildren<CapsuleCollider>();
             groundRadius = capsule.radius * radiusMultiplier;
             cameraTransform = Camera.main.transform;
@@ -44,7 +41,6 @@ namespace Salems_Draw
         {
             direction = cameraTransform.TransformDirection(direction);
             direction = Vector3.ProjectOnPlane(direction, Vector3.up).normalized;
-            NotifyObservers(new MovementChange(direction * movementSpeed));
             if (!CanMove)
                 return;
             if (!isGrounded)
@@ -74,40 +70,16 @@ namespace Salems_Draw
             body.AddForce(desiredForce, ForceMode.Force);
         }
 
-        protected void Jump()
-        {
-            if (!isGrounded)
-                return;
-            body.AddForce(jumpVelocity * Vector3.up, ForceMode.VelocityChange);
-            NotifyObservers(GroundedStatus.Jump);
-        }
-
         protected void CheckGrounded()
         {
             var ray = new Ray(transform.position + Vector3.up, -Vector3.up);
             bool wasGrounded = isGrounded;
             isGrounded = Physics.SphereCast(ray, groundRadius, groundDistance);
-            if (wasGrounded != isGrounded)
-                NotifyObservers(isGrounded ? GroundedStatus.Landing : GroundedStatus.Falling);
         }
 
-        #region Notifications
-        public enum GroundedStatus
+        public void SetSpeed(float speed)
         {
-            Jump,
-            Landing,
-            Falling,
+            this.movementSpeed = speed;
         }
-
-        public struct MovementChange : INotification
-        {
-            public Vector3 Velocity { get; }
-
-            public MovementChange(Vector3 localDirection)
-            {
-                Velocity = localDirection;
-            }
-        }
-        #endregion
     }
 }
