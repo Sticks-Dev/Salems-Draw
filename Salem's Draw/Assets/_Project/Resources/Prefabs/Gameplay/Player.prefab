@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6185715138148113587}
   m_Layer: 0
   m_Name: Move Controller
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkingSpeed: 2.25
   sprintSpeed: 4
-  jumpHeight: 0
   movementInput: {fileID: 11400000, guid: 6e59fd9d2f0d6aa429f62f44148a4db1, type: 2}
   sprintInput: {fileID: 11400000, guid: 15a3340872f4e344b9e843e97c34b405, type: 2}
 --- !u!1 &3168423078892161298
@@ -62,7 +61,7 @@ GameObject:
   - component: {fileID: 7104939955388292649}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,7 +139,7 @@ GameObject:
   - component: {fileID: 690969485615289412}
   m_Layer: 0
   m_Name: Visual
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,7 +244,7 @@ GameObject:
   - component: {fileID: 5705808545334760509}
   m_Layer: 0
   m_Name: Rotation Controller
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -293,7 +292,7 @@ GameObject:
   - component: {fileID: 4713358246549334668}
   m_Layer: 0
   m_Name: Slide Controller
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
