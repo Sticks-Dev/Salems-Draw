@@ -1,6 +1,5 @@
 ﻿using Kickstarter.GOAP;
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -90,15 +89,13 @@ namespace Salems_Draw
 
         readonly private Func<GameObject> target;
         readonly private float attackCooldown;
-        readonly private Func<Coroutine> attack;
 
         private bool canAttack;
 
-        public AttackStrategy(Func<GameObject> getTarget, float attackCooldown, Func<Coroutine> attack)
+        public AttackStrategy(Func<GameObject> getTarget, float attackCooldown)
         {
             target = getTarget;
             this.attackCooldown = attackCooldown;
-            this.attack = attack;
         }
 
         private CountdownTimer timer;
@@ -123,14 +120,6 @@ namespace Salems_Draw
         private void AttackTarget()
         {
             Debug.Log("Attacking target");
-            var attackRoutine = attack?.Invoke();
-            CoroutineHelper.Instance.StartCoroutine(WaitForAttackToComplete(attackRoutine));
-        }
-
-        private IEnumerator WaitForAttackToComplete(Coroutine routine)
-        {
-            yield return routine;
-            Complete = true;
         }
     }
 }

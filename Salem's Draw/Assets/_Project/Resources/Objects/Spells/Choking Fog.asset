@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84cb2f3df44fa8a46b8c715ba89f6648, type: 3}
   m_Name: Choking Fog
   m_EditorClassIdentifier: 
-  spellSections: []
+  spellSections:
+  - animationName: Cast Spell
+    spellObject: {fileID: 0}
+    objectOffset: {x: 0, y: 0, z: 0}
+    delay: 0
+    duration: 0

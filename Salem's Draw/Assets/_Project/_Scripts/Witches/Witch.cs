@@ -64,7 +64,7 @@ namespace Salems_Draw
                 .Build());
 
             actions.Add(new AgentAction.Builder("AttackPlayer")
-                .WithStrategy(new AttackStrategy(() => attackSensor.Target, attackCooldown, () => spell.Cast(this)))
+                .WithStrategy(new AttackStrategy(() => attackSensor.Target, attackCooldown))
                 .AddPrecondition(beliefs["PlayerInAttackRange"])
                 .AddEffect(beliefs["AttackingPlayer"])
                 .Build());
