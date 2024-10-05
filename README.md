@@ -10,6 +10,7 @@ You are an athletic girl, but in this alternate universe everyone is a witch / w
   - Bow and Arrows
     - You can try to retrieve arrows from targets but there is a chance it will snap, this action will cost heavy time
     - Drawing arrows from things will make heavy noises, drawing in nearby witches
+    - You begin with 0 arrows and must take the risk to collect them
 
 ## Enemy abilities:
 
