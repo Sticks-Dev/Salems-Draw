@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Dependency Injector.unity
     guid: 36d590a25cf79d64085f385900676726
+  - enabled: 1
+    path: Assets/_Project/Scenes/Game OVER.unity
+    guid: d01151a5383f4d84bbfc677792e08d49
   m_configObjects: {}

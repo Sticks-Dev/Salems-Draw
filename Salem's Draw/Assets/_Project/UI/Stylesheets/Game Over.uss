@@ -1,0 +1,33 @@
+VisualElement {}
+
+Root {
+	--background_primary: blue;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	background-color: rgb(75, 15, 15);
+}
+
+.game_over {
+	color: red;
+	font-size: 250px;
+}
+
+.restart_button {
+	background-color: rgb(255, 25, 25);
+
+	border-radius: 50px;
+	border-width: 10px;
+	border-color: rgb(35, 0, 10);
+
+	font-size: 100px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+}

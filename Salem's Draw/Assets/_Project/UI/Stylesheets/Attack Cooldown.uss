@@ -1,0 +1,30 @@
+VisualElement {}
+
+Root {
+	--bar_height: 20px;
+}
+
+.column_reverse {
+	height: 100%;
+	flex-direction: column-reverse;
+}
+
+.row_reverse {
+	flex-direction: row-reverse;
+}
+
+.unity-progress-bar {
+	width: 25%;
+	min-height: var(--bar_height);
+	max-height: var(--bar_height);
+	margin: 25px;
+}
+
+.unity-progress-bar__progress {
+	background-color: rgb(200, 25, 25);
+}
+
+.unity-progress-bar__background {
+	background-color: rgb(255, 100, 100);
+	border-color: rgb(100, 0, 0);
+}

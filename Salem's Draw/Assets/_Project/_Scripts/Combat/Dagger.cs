@@ -1,4 +1,5 @@
 ﻿using Kickstarter.Inputs;
+using System.Collections;
 using UnityEngine;
 
 namespace Salems_Draw
@@ -28,11 +29,16 @@ namespace Salems_Draw
 
         #region Attacking
         [SerializeField] private float attackRange = 1f;
+        [SerializeField] private float attackCooldown = 0.5f;
+
+        public event System.Action<float> CooldownProgressChanged;
+
+        private bool canAttack = true;
 
         protected override void Attack()
         {
             var targetHealth = GetTargetHealth();
-            targetHealth?.TakeDamage(Damage);
+            StartCoroutine(Attack(targetHealth));
         }
 
         private Health GetTargetHealth()
@@ -41,6 +47,26 @@ namespace Salems_Draw
             if (!Physics.Raycast(cam.position, cam.forward, out RaycastHit hitInfo, attackRange, targets))
                 return null;
             return hitInfo.collider.GetComponent<Health>();
+        }
+
+        private IEnumerator Attack(Health targetHealth)
+        {
+            if (!canAttack)
+                yield break;
+            canAttack = false;
+            if (targetHealth != null)
+                targetHealth.TakeDamage(Damage);
+
+            float elapsedTime = 0f;
+            while (elapsedTime < attackCooldown)
+            {
+                elapsedTime += Time.deltaTime;
+                float progress = elapsedTime / attackCooldown;
+                CooldownProgressChanged?.Invoke(progress);
+                yield return null;
+            }
+
+            canAttack = true;
         }
         #endregion
     }
