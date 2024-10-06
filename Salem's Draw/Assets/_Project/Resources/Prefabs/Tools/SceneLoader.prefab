@@ -50,7 +50,7 @@ MonoBehaviour:
     - Reference:
         asset: {fileID: 102900000, guid: b288d65f0b8798f4bb73ec4be6a736b1, type: 3}
         guid: b288d65f0b8798f4bb73ec4be6a736b1
-      Type: 0
+      Type: 6
     - Reference:
         asset: {fileID: 102900000, guid: 0d0c1c9cf12cb404ea642fa3003b4890, type: 3}
         guid: 0d0c1c9cf12cb404ea642fa3003b4890
@@ -62,4 +62,4 @@ MonoBehaviour:
     - Reference:
         asset: {fileID: 102900000, guid: 36d590a25cf79d64085f385900676726, type: 3}
         guid: 36d590a25cf79d64085f385900676726
-      Type: 0
+      Type: 6
