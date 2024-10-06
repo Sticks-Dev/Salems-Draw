@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Witch
+  - Spawnpoint
   layers:
   - Default
   - TransparentFX

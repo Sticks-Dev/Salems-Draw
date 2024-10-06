@@ -279,13 +279,15 @@ GameObject:
   - component: {fileID: 6672796306540636703}
   - component: {fileID: 2251535353109169670}
   - component: {fileID: 8186141542219508770}
+  - component: {fileID: 1356415995313162462}
+  - component: {fileID: 66758072794275726}
   m_Layer: 0
   m_Name: Witch Sensor
   m_TagString: Witch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1936570096520357205
 Transform:
   m_ObjectHideFlags: 0
@@ -360,6 +362,31 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1356415995313162462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7486884853264160497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f8e5e1ef675b546af6e50131c51c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+--- !u!114 &66758072794275726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7486884853264160497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db37b8d3a12f0754da725e8d51b57ee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &613727086996312097
 PrefabInstance:
   m_ObjectHideFlags: 0

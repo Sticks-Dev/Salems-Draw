@@ -43,16 +43,6 @@ namespace Salems_Draw
         #endregion
 
         #region Unity Events
-        protected override void Awake()
-        {
-            base.Awake();
-        }
-
-        protected override void Start()
-        {
-            base.Start();
-        }
-
         private void FixedUpdate()
         {
             CheckGrounded();
