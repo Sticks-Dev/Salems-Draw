@@ -4,9 +4,9 @@ namespace Salems_Draw
 {
     public class Health : MonoBehaviour
     {
-        [SerializeField] private int maxHealth = 100;
+        [SerializeField] private float maxHealth = 100;
 
-        public int CurrentHealth { get; private set; }
+        public float CurrentHealth { get; private set; }
 
         public event System.Action OnDie;
 
@@ -15,7 +15,7 @@ namespace Salems_Draw
             CurrentHealth = maxHealth;
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(float damage)
         {
             CurrentHealth -= damage;
             if (CurrentHealth <= 0)
