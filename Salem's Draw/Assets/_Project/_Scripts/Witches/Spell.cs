@@ -26,13 +26,11 @@ namespace Salems_Draw
 
         [System.Serializable] private struct SpellSection
         {
-            [SerializeField] private string animationName;
             [SerializeField] private GameObject spellObject;
             [SerializeField] private Vector3 objectOffset;
             [SerializeField] private float delay;
             [SerializeField] private float duration;
 
-            public readonly string AnimationName => animationName;
             public readonly GameObject SpellObject => spellObject;
             public readonly Vector3 ObjectOffset => objectOffset;
             public readonly float Delay => delay;
