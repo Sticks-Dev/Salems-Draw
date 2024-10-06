@@ -16,5 +16,5 @@ MonoBehaviour:
   - animationName: Cast Spell
     spellObject: {fileID: 0}
     objectOffset: {x: 0, y: 0, z: 0}
-    delay: 0
-    duration: 0
+    delay: 2.5
+    duration: 2.5

@@ -1,4 +1,5 @@
 using Kickstarter.GOAP;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,6 +29,9 @@ namespace Salems_Draw
         #endregion
 
         #region GOAP
+
+        public event Action<string> OnAction;
+
         protected override void SetupBeliefs()
         {
             beliefs = new Dictionary<string, AgentBelief>();
@@ -48,23 +52,23 @@ namespace Salems_Draw
             actions = new HashSet<AgentAction>();
 
             actions.Add(new AgentAction.Builder("Relax")
-                .WithStrategy(new IdleStrategy(5))
+                .WithStrategy(new IdleStrategy(5, OnAction))
                 .AddEffect(beliefs["Nothing"])
                 .Build());
 
             actions.Add(new AgentAction.Builder("Wander Around")
-                .WithStrategy(new WanderStrategy(navMeshAgent, 10))
+                .WithStrategy(new WanderStrategy(navMeshAgent, 10, OnAction))
                 .AddEffect(beliefs["AgentMoving"])
                 .Build());
 
             actions.Add(new AgentAction.Builder("ChasePlayer")
-                .WithStrategy(new MoveStrategy(navMeshAgent, () => beliefs["PlayerInChaseRange"].Location))
+                .WithStrategy(new MoveStrategy(navMeshAgent, () => beliefs["PlayerInChaseRange"].Location, OnAction))
                 .AddPrecondition(beliefs["PlayerInChaseRange"])
                 .AddEffect(beliefs["PlayerInAttackRange"])
                 .Build());
 
             actions.Add(new AgentAction.Builder("AttackPlayer")
-                .WithStrategy(new AttackStrategy(() => attackSensor.Target, attackCooldown))
+                .WithStrategy(new SpellStrategy(() => attackSensor.Target, attackCooldown, () => spell.Cast(this), OnAction, transform))
                 .AddPrecondition(beliefs["PlayerInAttackRange"])
                 .AddEffect(beliefs["AttackingPlayer"])
                 .Build());

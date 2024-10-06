@@ -10,10 +10,10 @@ namespace Salems_Draw
 
         public Coroutine Cast(MonoBehaviour source)
         {
-            return source.StartCoroutine(CastSpell(source));
+            return CoroutineHelper.Instance.StartCoroutine(CastSpell(source));
         }
 
-        public IEnumerator CastSpell(MonoBehaviour source)
+        private IEnumerator CastSpell(MonoBehaviour source)
         {
             foreach (var section in spellSections)
             {
