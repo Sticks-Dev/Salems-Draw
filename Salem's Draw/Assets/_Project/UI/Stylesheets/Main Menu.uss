@@ -1,0 +1,23 @@
+VisualElement {}
+
+.container {
+	height: 100%;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.title {
+	color: white;
+	font-size: 150px;
+	-unity-font: url('../../Resources/Fonts/Creepster-Regular.ttf');
+}
+
+.start_button {
+	font-size: 150px;
+	padding-left: 100px;
+	padding-right: 100px;
+
+	border-radius: 100px;
+	border-color: black;
+	border-width: 10px;
+} 

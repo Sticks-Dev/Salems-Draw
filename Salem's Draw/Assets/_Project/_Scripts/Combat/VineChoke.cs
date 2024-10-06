@@ -32,7 +32,7 @@ namespace Salems_Draw
 
         protected override void Attack()
         {
-            target.TakeDamage(Damage);
+            target?.TakeDamage(Damage);
         }
     }
 }
