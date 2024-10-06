@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8557353876768312887}
   - component: {fileID: 6185715138148113587}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Move Controller
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 6486238015242590202}
   - component: {fileID: 1458093292905375571}
   - component: {fileID: 7104939955388292649}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -138,7 +138,8 @@ GameObject:
   - component: {fileID: 7151856797736932436}
   - component: {fileID: 6138959569420346725}
   - component: {fileID: 690969485615289412}
-  m_Layer: 0
+  - component: {fileID: 1951177294541029107}
+  m_Layer: 3
   m_Name: Visual
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -233,6 +234,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1951177294541029107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749203051403362222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f8e5e1ef675b546af6e50131c51c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  CurrentHealth: 0
 --- !u!1 &8102527164404036535
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2454050561055331574}
   - component: {fileID: 5705808545334760509}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rotation Controller
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -291,7 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6744612123703276284}
   - component: {fileID: 4713358246549334668}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Slide Controller
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -392,6 +407,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dagger
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145955225580410408, guid: ec18151f36b11b041a09e4a62560a873,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

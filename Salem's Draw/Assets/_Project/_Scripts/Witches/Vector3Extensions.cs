@@ -4,14 +4,14 @@ namespace Salems_Draw
 {
     public static class Vector3Extensions
     {
-        public static Vector3 With(this Vector3 vector, float x = 0, float y = 0, float z = 0)
+        public static Vector3 With(this Vector3 vector, float? x = null, float? y = null, float? z = null)
         {
-            if (x != 0)
-                vector.x = x;
-            if (y != 0)
-                vector.y = y;
-            if (z != 0)
-                vector.z = z;
+            if (x != null)
+                vector.x = (float)x;
+            if (y != null)
+                vector.y = (float)y;
+            if (z != null)
+                vector.z = (float)z;
             return vector;
         }
     }

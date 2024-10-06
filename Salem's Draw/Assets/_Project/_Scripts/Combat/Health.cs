@@ -6,7 +6,7 @@ namespace Salems_Draw
     {
         [SerializeField] private float maxHealth = 100;
 
-        public float CurrentHealth { get; private set; }
+        public float CurrentHealth;
 
         public event System.Action OnDie;
 

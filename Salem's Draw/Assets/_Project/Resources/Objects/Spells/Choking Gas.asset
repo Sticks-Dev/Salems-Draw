@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Choking Gas
   m_EditorClassIdentifier: 
   spellSections:
-  - animationName: Cast Spell
-    spellObject: {fileID: 0}
+  - spellObject: {fileID: 3315028814957887292, guid: 8f52e2bc04430de4ba52f9941e514c2c,
+      type: 3}
     objectOffset: {x: 0, y: 0, z: 0}
-    delay: 2.5
-    duration: 2.5
+    delay: 0.25
+    duration: 14.75

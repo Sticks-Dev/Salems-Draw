@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Salems_Draw
@@ -8,18 +9,18 @@ namespace Salems_Draw
     {
         [SerializeField] private SpellSection[] spellSections;
 
-        public Coroutine Cast(MonoBehaviour source)
+        public Coroutine Cast(MonoBehaviour source, Func<Vector3> offset)
         {
-            return CoroutineHelper.Instance.StartCoroutine(CastSpell(source));
+            return CoroutineHelper.Instance.StartCoroutine(CastSpell(source, offset));
         }
 
-        private IEnumerator CastSpell(MonoBehaviour source)
+        private IEnumerator CastSpell(MonoBehaviour source, Func<Vector3> offset)
         {
             foreach (var section in spellSections)
             {
                 yield return new WaitForSeconds(section.Delay);
                 if (section.SpellObject != null)
-                    Instantiate(section.SpellObject, source.transform.position + section.ObjectOffset, source.transform.root.rotation);
+                    Instantiate(section.SpellObject, source.transform.position + section.ObjectOffset + offset(), source.transform.root.rotation);
                 yield return new WaitForSeconds(section.Duration);
             }
         }

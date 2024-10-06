@@ -124,20 +124,14 @@ namespace Salems_Draw
 
         public void Update(float deltaTime)
         {
-            transform.LookAt(target()?.transform ?? transform);
+            transform.LookAt(target()?.transform.position.With(y: transform.position.y) ?? transform.position);
         }
 
         private IEnumerator ExecuteSpell()
         {
             Complete = false;
-            AttackTarget();
             yield return spell();
             Complete = true;
-        }
-
-        private void AttackTarget()
-        {
-            Debug.Log("Attacking target");
         }
     }
 }

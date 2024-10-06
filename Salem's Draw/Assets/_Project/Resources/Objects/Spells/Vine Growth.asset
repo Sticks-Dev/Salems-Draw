@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Vine Growth
   m_EditorClassIdentifier: 
   spellSections:
-  - animationName: Cast Spell
-    spellObject: {fileID: 0}
+  - spellObject: {fileID: 3315028814957887292, guid: b530a548b9ea60745a31e1cdc26e27aa,
+      type: 3}
     objectOffset: {x: 0, y: 0, z: 0}
-    delay: 2.5
-    duration: 2.5
+    delay: 0.5
+    duration: 9.5
