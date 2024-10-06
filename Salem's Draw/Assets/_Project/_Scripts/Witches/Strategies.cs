@@ -124,9 +124,7 @@ namespace Salems_Draw
 
         public void Update(float deltaTime)
         {
-            // Assuming you have a reference to the transform and the target GameObject
             transform.LookAt(target()?.transform ?? transform);
-
         }
 
         private IEnumerator ExecuteSpell()
