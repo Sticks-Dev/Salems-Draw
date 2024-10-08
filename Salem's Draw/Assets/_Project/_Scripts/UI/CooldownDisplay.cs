@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 
 namespace Salems_Draw
 {
-    public class AttackCooldown : MonoBehaviour
+    public class CooldownDisplay : MonoBehaviour
     {
         [SerializeField] private StyleSheet styles;
 
@@ -13,7 +13,7 @@ namespace Salems_Draw
         private void Start()
         {
             BuildDocument();
-            GetComponent<Dagger>().CooldownProgressChanged += OnCooldownProgressChanged;
+            GetComponentInParent<ICooldown>().CooldownProgressChanged += OnCooldownProgressChanged;
         }
 
         private void OnValidate()

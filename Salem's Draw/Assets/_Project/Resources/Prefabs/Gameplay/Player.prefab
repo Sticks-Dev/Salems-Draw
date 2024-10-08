@@ -1,5 +1,68 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7943355858158080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2841440063929893490}
+  - component: {fileID: 7249653769926645457}
+  - component: {fileID: 4685481092797572982}
+  m_Layer: 3
+  m_Name: Dagger Cooldown Display
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2841440063929893490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7943355858158080}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3603592964195715826}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7249653769926645457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7943355858158080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 2e12ecaed381003469cc743e6c93e586, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: e7f22695fa4b4924b96c2864bd7a75e1,
+    type: 3}
+  m_SortingOrder: 0
+--- !u!114 &4685481092797572982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7943355858158080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee31d26378539364cb795e592bf06260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  styles: {fileID: 7433441132597879392, guid: e28fcfbf0ac932b41a2ff1ca89feabd9, type: 3}
 --- !u!1 &2503341200569311397
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +92,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8360774866545693024}
   m_Father: {fileID: 6486238015242590202}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6185715138148113587
@@ -46,8 +110,72 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkingSpeed: 2.25
   sprintSpeed: 4
+  staminaDuration: 5
   movementInput: {fileID: 11400000, guid: 6e59fd9d2f0d6aa429f62f44148a4db1, type: 2}
   sprintInput: {fileID: 11400000, guid: 15a3340872f4e344b9e843e97c34b405, type: 2}
+--- !u!1 &3156657821224191681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8360774866545693024}
+  - component: {fileID: 8155057032009951408}
+  - component: {fileID: 1665882894268829288}
+  m_Layer: 3
+  m_Name: Stamina Display
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8360774866545693024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3156657821224191681}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8557353876768312887}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8155057032009951408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3156657821224191681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 2e12ecaed381003469cc743e6c93e586, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: e7f22695fa4b4924b96c2864bd7a75e1,
+    type: 3}
+  m_SortingOrder: 0
+--- !u!114 &1665882894268829288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3156657821224191681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee31d26378539364cb795e592bf06260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  styles: {fileID: 7433441132597879392, guid: 727f94afd517cec4ca7e977f84c77170, type: 3}
 --- !u!1 &3168423078892161298
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,8 +267,9 @@ GameObject:
   - component: {fileID: 6138959569420346725}
   - component: {fileID: 690969485615289412}
   - component: {fileID: 1951177294541029107}
+  - component: {fileID: 4472635291059983844}
   m_Layer: 3
-  m_Name: Visual
+  m_Name: Health
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -248,6 +377,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   CurrentHealth: 0
+--- !u!114 &4472635291059983844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749203051403362222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be32b1edd2791c446af47f9f91d856ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8102527164404036535
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,8 +482,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slideInput: {fileID: 11400000, guid: bb2d746d05934bb47abe5cd6297eecd4, type: 2}
-  slideSpeed: 6
-  slideDuration: 3
+  slideSpeed: 4.5
+  slideDuration: 1.5
   slideToggleDuration: 0.25
   slidingHeightMultiplier: 0.4
 --- !u!1001 &1862259591416954494
@@ -415,16 +556,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9145955225580410408, guid: ec18151f36b11b041a09e4a62560a873,
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3160009122741695628, guid: ec18151f36b11b041a09e4a62560a873,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1114186391632871498}
-    - targetCorrespondingSourceObject: {fileID: 9145955225580410408, guid: ec18151f36b11b041a09e4a62560a873,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8869392877765661729}
+      addedObject: {fileID: 2841440063929893490}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec18151f36b11b041a09e4a62560a873, type: 3}
 --- !u!4 &3603592964195715826 stripped
 Transform:
@@ -432,39 +569,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1862259591416954494}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7436822774466848854 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9145955225580410408, guid: ec18151f36b11b041a09e4a62560a873,
-    type: 3}
-  m_PrefabInstance: {fileID: 1862259591416954494}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1114186391632871498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7436822774466848854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee31d26378539364cb795e592bf06260, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  styles: {fileID: 7433441132597879392, guid: e28fcfbf0ac932b41a2ff1ca89feabd9, type: 3}
---- !u!114 &8869392877765661729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7436822774466848854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 2e12ecaed381003469cc743e6c93e586, type: 2}
-  m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: e7f22695fa4b4924b96c2864bd7a75e1,
-    type: 3}
-  m_SortingOrder: 0

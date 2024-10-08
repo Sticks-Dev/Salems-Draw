@@ -1,11 +1,14 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Salems_Draw
 {
-    public abstract class LocomotionController : MonoBehaviour, IMover
+    public abstract class LocomotionController : MonoBehaviour, IMover, ICooldown
     {
         [SerializeField] protected float walkingSpeed;
         [SerializeField] protected float sprintSpeed;
+        [SerializeField] private float staminaDuration = 5f;
 
         protected bool isGrounded;
         protected float movementSpeed;
@@ -21,6 +24,11 @@ namespace Salems_Draw
         private const float airborneMovementMultiplier = 40f;
         private float groundRadius;
         private Transform cameraTransform;
+        private float stamina = 1f;
+        private Coroutine staminaRoutine;
+        private bool sprinting = false;
+
+        public event Action<float> CooldownProgressChanged;
 
         #region UnityEvents
         protected virtual void Awake()
@@ -79,7 +87,42 @@ namespace Salems_Draw
 
         public void SetSpeed(float speed)
         {
-            this.movementSpeed = speed;
+            movementSpeed = speed;
+            if (movementSpeed == sprintSpeed)
+            {
+                if (staminaRoutine != null)
+                    StopCoroutine(staminaRoutine);
+                staminaRoutine = StartCoroutine(UpdateStamina(-1));
+                sprinting = true;
+                return;
+            }
+            if (sprinting)
+            {
+                if (staminaRoutine != null)
+                    StopCoroutine(staminaRoutine);
+                staminaRoutine = StartCoroutine(UpdateStamina(1));
+            }
+            sprinting = false;
+        }
+
+        private IEnumerator UpdateStamina(float multiple)
+        {
+            if (multiple > 0)
+            {
+                multiple /= 2; // Walking recharges stamina twice as slow
+                yield return new WaitForSeconds(3); // Delay before stamina starts recharging
+            }
+            var delay = new WaitForEndOfFrame();
+            float duration = staminaDuration * multiple;
+            while (true)
+            {
+                stamina += Time.deltaTime / duration;
+                stamina = Mathf.Clamp(stamina, 0, 1);
+                if (stamina <= 0)
+                    SetSpeed(walkingSpeed);
+                CooldownProgressChanged?.Invoke(stamina);
+                yield return delay;
+            }
         }
     }
 }

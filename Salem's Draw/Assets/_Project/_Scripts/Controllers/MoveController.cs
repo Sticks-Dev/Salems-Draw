@@ -39,6 +39,7 @@ namespace Salems_Draw
         {
             movementSpeed = input == 0 ? walkingSpeed : sprintSpeed;
             OnSprintStatusChange?.Invoke(input);
+            SetSpeed(input == 0 ? walkingSpeed : sprintSpeed);
         }
         #endregion
 

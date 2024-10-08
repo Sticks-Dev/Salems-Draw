@@ -82,6 +82,20 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 36d590a25cf79d64085f385900676726, type: 3}
         guid: 36d590a25cf79d64085f385900676726
       Type: 6
+  - GroupName: Game Over
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: b288d65f0b8798f4bb73ec4be6a736b1, type: 3}
+        guid: b288d65f0b8798f4bb73ec4be6a736b1
+      Type: 6
+    - Reference:
+        asset: {fileID: 102900000, guid: d01151a5383f4d84bbfc677792e08d49, type: 3}
+        guid: d01151a5383f4d84bbfc677792e08d49
+      Type: 3
+    - Reference:
+        asset: {fileID: 102900000, guid: 36d590a25cf79d64085f385900676726, type: 3}
+        guid: 36d590a25cf79d64085f385900676726
+      Type: 6
 --- !u!1 &3663899373007566751
 GameObject:
   m_ObjectHideFlags: 0

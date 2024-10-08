@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Salems_Draw
 {
-    public class Dagger : Weapon, IInputReceiver
+    public class Dagger : Weapon, IInputReceiver, ICooldown
     {
         #region Input Handler
         [SerializeField] private FloatInput attackInput;
