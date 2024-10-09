@@ -96,6 +96,20 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 36d590a25cf79d64085f385900676726, type: 3}
         guid: 36d590a25cf79d64085f385900676726
       Type: 6
+  - GroupName: You Win
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: b288d65f0b8798f4bb73ec4be6a736b1, type: 3}
+        guid: b288d65f0b8798f4bb73ec4be6a736b1
+      Type: 6
+    - Reference:
+        asset: {fileID: 102900000, guid: 4eea0750ee4d9ee419a0917fdf26523c, type: 3}
+        guid: 4eea0750ee4d9ee419a0917fdf26523c
+      Type: 3
+    - Reference:
+        asset: {fileID: 102900000, guid: 36d590a25cf79d64085f385900676726, type: 3}
+        guid: 36d590a25cf79d64085f385900676726
+      Type: 6
 --- !u!1 &3663899373007566751
 GameObject:
   m_ObjectHideFlags: 0

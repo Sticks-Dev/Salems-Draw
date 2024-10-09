@@ -6,7 +6,8 @@ namespace Salems_Draw
     {
         [SerializeField] private float maxHealth = 100;
 
-        public float CurrentHealth;
+        public float CurrentHealth { get; private set; }
+        private bool alive = true;
 
         public event System.Action OnDie;
 
@@ -18,9 +19,10 @@ namespace Salems_Draw
         public void TakeDamage(float damage)
         {
             CurrentHealth -= damage;
-            if (CurrentHealth <= 0)
+            if (CurrentHealth <= 0 && alive)
             {
                 OnDie?.Invoke();
+                alive = false;
             }
         }
     }

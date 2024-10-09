@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 8831535626493139228}
   - component: {fileID: 2946008968660962171}
   - component: {fileID: 2064785863437436230}
+  - component: {fileID: 1397989479887151042}
   m_Layer: 6
   m_Name: WITCH
   m_TagString: Untagged
@@ -457,6 +458,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1397989479887151042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6793708174695666450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7acf42bc2cadd7a4a84e4ecbf1f84e78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7486884853264160497
 GameObject:
   m_ObjectHideFlags: 0

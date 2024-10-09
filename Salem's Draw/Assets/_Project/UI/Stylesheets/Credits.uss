@@ -1,0 +1,50 @@
+VisualElement {}
+
+Root {
+	--background_primary: blue;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	background-color: rgb(15, 15, 75);
+}
+
+.you_win {
+	color: blue;
+	font-size: 250px;
+}
+
+.menu_button {
+	background-color: rgb(25, 25, 255);
+
+	border-radius: 50px;
+	border-width: 10px;
+	border-color: rgb(35, 0, 10);
+
+	font-size: 100px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom: 60px;
+}
+
+.credits {
+	font-size: 120px;
+	color: rgb(125, 125, 255);
+}
+
+.credits_list {
+	border-color: rgb(100, 100, 200);
+	border-width: 10px;
+	border-radius: 200px;
+}
+
+.name {
+	font-size: 60px;
+	align-self: center;
+	color: rgb(125, 125, 255);
+}

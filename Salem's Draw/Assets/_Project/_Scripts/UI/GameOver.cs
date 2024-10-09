@@ -34,7 +34,7 @@ namespace Salems_Draw
 
             var container = root.CreateChild<VisualElement>("container");
             container.CreateChild<Label>("game_over").text = "Game Over";
-            
+
             var button = container.CreateChild<Button>("restart_button");
             button.text = "Restart?";
             button.clickable.clicked += () => sceneLoader.LoadSceneGroup("Forest");
