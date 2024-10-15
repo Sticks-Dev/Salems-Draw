@@ -46,6 +46,10 @@ namespace Salems_Draw
             var button = container.CreateChild<Button>("menu_button");
             button.text = "Main Menu";
             button.clickable.clicked += () => sceneLoader.LoadSceneGroup("Main Menu");
+
+            var quitButton = container.CreateChild<Button>("quit_button");
+            quitButton.text = "Quit";
+            quitButton.clickable.clicked += Application.Quit;
         }
 
         private void AddNames(VisualElement creditsList)

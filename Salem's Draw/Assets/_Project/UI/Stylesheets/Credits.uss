@@ -24,7 +24,7 @@ Root {
 
 	border-radius: 50px;
 	border-width: 10px;
-	border-color: rgb(35, 0, 10);
+	border-color: rgb(10, 0, 35);
 
 	font-size: 100px;
 	padding-left: 20px;
@@ -47,4 +47,17 @@ Root {
 	font-size: 60px;
 	align-self: center;
 	color: rgb(125, 125, 255);
+}
+
+.quit_button {
+	background-color: rgb(125, 125, 255);
+
+	border-radius: 50px;
+	border-width: 10px;
+	border-color: rgb(100, 75, 200);
+
+	font-size: 100px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom: 10px;
 }

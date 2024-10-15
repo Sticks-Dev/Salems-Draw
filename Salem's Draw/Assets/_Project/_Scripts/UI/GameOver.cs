@@ -38,6 +38,10 @@ namespace Salems_Draw
             var button = container.CreateChild<Button>("restart_button");
             button.text = "Restart?";
             button.clickable.clicked += () => sceneLoader.LoadSceneGroup("Forest");
+
+            var quitButton = container.CreateChild<Button>("quit_button");
+            quitButton.text = "Quit";
+            quitButton.clickable.clicked += Application.Quit;
         }
     }
 }

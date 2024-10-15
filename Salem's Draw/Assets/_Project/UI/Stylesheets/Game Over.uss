@@ -29,5 +29,18 @@ Root {
 	font-size: 100px;
 	padding-left: 20px;
 	padding-right: 20px;
+	margin-bottom: 60px;
+}
 
+.quit_button {
+	background-color: rgb(255, 125, 125);
+
+	border-radius: 50px;
+	border-width: 10px;
+	border-color: rgb(200, 75, 100);
+
+	font-size: 100px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom: 10px;
 }
